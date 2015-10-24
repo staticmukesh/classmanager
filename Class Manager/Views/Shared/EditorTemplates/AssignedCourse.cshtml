@@ -1,0 +1,9 @@
+﻿@model AssignedCourse
+@using Class_Manager.ViewModels;
+
+<fieldset>
+    @Html.HiddenFor(model => model.CourseId)
+    @Html.CheckBoxFor(model => model.Assigned)
+    @Html.HiddenFor(model => model.CourseName)
+    @Html.DisplayFor(model => model.CourseName)
+</fieldset>

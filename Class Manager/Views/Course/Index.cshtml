@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Class_Manager.Models.Course>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h2>Courses</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                <button class="btn btn-success">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }, new { @style = "color: white;text-decoration:none;" })
+                </button>
+                <button class="btn btn-warning">
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseId }, new { @style = "color: white;text-decoration:none;" })
+                </button>
+                <button class="btn btn-danger">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId }, new { @style = "color: white;text-decoration:none;" })
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Create New Course", "Create")
+</p>
