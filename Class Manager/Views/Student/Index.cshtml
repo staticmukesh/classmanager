@@ -22,7 +22,7 @@
                 <td>
                     @foreach (var course in item.Courses)
                     {
-                        <span>@Html.ActionLink(course.CourseName, "Details", "Course", new { id = course.CourseId }, null) </span>
+                        <span>@Html.ActionLink(course.CourseName, "Details", "Course", new { id = course.CourseId }, null) | </span>
                     }
                 </td>
                 <td>
@@ -40,3 +40,6 @@
         }
     </thead>
 </table>
+<p>
+    @Html.ActionLink("Add New Student", "Create")
+</p>

@@ -1,9 +1,9 @@
 ﻿@model Class_Manager.ViewModels.StudentViewModel
 @{
-    ViewBag.Title = "Add Student";
+    ViewBag.Title = "Edit Student";
 }
 
-<h2>Create Student</h2>
+<h2>Edit Student</h2>
 
 @using (Html.BeginForm())
 {
@@ -78,9 +78,11 @@
             </div>
         </div>
 
+       @Html.HiddenFor(m => m.StudentId)
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-success" />
+                <input type="submit" value="Edit" class="btn btn-success" />
             </div>
         </div>
     </div>

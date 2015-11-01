@@ -37,6 +37,10 @@
                 <button class="btn btn-danger">
                     @Html.ActionLink("Delete", "Delete", new { id = item.CourseId }, new { @style = "color: white;text-decoration:none;" })
                 </button>
+                <button class="btn btn-info">
+                    @Html.ActionLink("Add Class Work", "Classwork", new { id = item.CourseId }, new { @style = "color: white;text-decoration:none;" })
+                </button>
+
             </td>
         </tr>
     }
@@ -44,5 +48,5 @@
 </table>
 
 <p>
-    @Html.ActionLink("Create New Course", "Create")
+    @Html.ActionLink("Add New Course", "Create")
 </p>

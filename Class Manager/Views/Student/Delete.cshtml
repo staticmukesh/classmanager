@@ -62,7 +62,7 @@
         @foreach (var item in Model.Courses)
         {
             <dd>
-                @item.CourseName
+                @Html.ActionLink(item.CourseName,"Details", "Course", new { id= item.CourseId }, new { @style = "text-decoration:none;" })
             </dd>
         }
 

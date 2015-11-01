@@ -20,5 +20,6 @@ namespace Class_Manager.Models
         public string CourseName { get; set; }
 
         public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<ClassWork> ClassWorks { get; set; }
     }
 }

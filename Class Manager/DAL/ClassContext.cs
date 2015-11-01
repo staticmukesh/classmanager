@@ -11,6 +11,9 @@ namespace Class_Manager.DAL
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<ClassWork> ClassWorks { get; set; }
+        public DbSet<Grade> Grades{ get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

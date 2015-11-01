@@ -3,7 +3,10 @@
     ViewBag.Title = "Details Student";
 }
 
-<h2>Details</h2>
+
+<h2>Student Details</h2>
+
+<hr />
 <div>
     <dl class="dl-horizontal">
         <dt>
@@ -37,7 +40,7 @@
         <dd>
             @Html.DisplayFor(model => model.ParentName)
         </dd>
-            
+
         <dt>
             @Html.DisplayNameFor(model => model.Phone)
         </dt>
@@ -60,9 +63,51 @@
         @foreach (var item in Model.Courses)
         {
             <dd>
-                @item.CourseName
+                @Html.ActionLink(item.CourseName, "Details", "Course", new { id = item.CourseId }, new { @style = "text-decoration:none;" })
             </dd>
         }
     </dl>
 </div>
+
+@if ((ViewBag.grades != null) && (ViewBag.grades.Count > 0))
+{
+    <h2>Student Performance</h2>
+
+        <table class="table">
+            <tr>
+                <th>
+                    Course
+                </th>
+                <th>
+                    Class Work
+                </th>
+                <th>
+                    Marks Obtained
+                </th>
+                <th>
+                    Comment
+                </th>
+            </tr>
+            @foreach (Class_Manager.Models.Grade grade in ViewBag.grades)
+            {
+                <tr>
+                    <td>
+                        @grade.CourseName
+                    </td>
+                    <td>
+                        @grade.ClassWorkName
+                    </td>
+                    <td>
+                        @grade.Marks
+                    </td>
+                    <td>
+                        @grade.Comment
+                    </td>
+                </tr>
+            }
+        </table>
+        <button class="btn btn-success"  onclick="alert('Mail is being sent. Please press OK!!')" >@Html.ActionLink("Send Mail", "SendMail",new { id= Model.StudentId }, new { style="text-decoration:none;color:white;" })</button>
+}
+
+
 
