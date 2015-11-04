@@ -1,0 +1,42 @@
+﻿@model List<Class_Manager.Models.Student>
+@{
+    ViewBag.Title = "Grades";
+}
+
+<h2>Grades</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Label("Student")
+            </th>
+            <th>
+                @Html.Label("Grade")
+            </th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(Model[i].LastName + "," + Model[i].FirstName, "Details", "Student", new { id = Model[i].StudentId }, null)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model[i].Grade)
+                </td>
+                @Html.HiddenFor(model => model[i].StudentId)
+            </tr>
+        }
+
+    </table>
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Update" class="btn btn-success" />
+        </div>
+    </div>
+}
+

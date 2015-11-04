@@ -13,6 +13,7 @@ using System.Web.Mvc;
 
 namespace Class_Manager.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private ClassContext db = new ClassContext();
@@ -360,5 +361,23 @@ namespace Class_Manager.Controllers
             return RedirectToAction("Details", new { id = student.StudentId });
         }
 
+        public ActionResult Grades()
+        {
+            List<Student> students = db.Students.ToList();
+            return View(students);
+        }
+
+        [HttpPost]
+        public ActionResult Grades(List<Student> students)
+        {
+            foreach(Student student in students)
+            {
+                Student oldStudent = db.Students.Find(student.StudentId);
+                oldStudent.Grade = student.Grade;
+                db.Entry(oldStudent).State = System.Data.Entity.EntityState.Modified;
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

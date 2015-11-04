@@ -13,6 +13,7 @@ using Class_Manager.ViewModels;
 
 namespace Class_Manager.Controllers
 {
+    [Authorize]
     public class CourseController : Controller
     {
         private ClassContext db = new ClassContext();
