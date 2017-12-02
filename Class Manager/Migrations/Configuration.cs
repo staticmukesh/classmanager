@@ -29,24 +29,13 @@ namespace Class_Manager.Migrations
             {
                 new Student {
                     StudentId =100,
-                    FirstName ="Mukesh",
-                    LastName ="Sharma",
-                    ParentName ="Bhim Singh",
-                    Phone ="+919711923230",
-                    EMail ="staticmukesh@gmail.com",
-                    Address ="A-47, Amar Colony, Nangloi, Delhi-110041",
+                    FirstName ="John",
+                    LastName ="Doe",
+                    ParentName ="John's Father",
+                    Phone ="+1234567890",
+                    EMail ="john@doe.com",
+                    Address ="John World",
                     Grade ="C"
-                },
-
-                new Student {
-                    StudentId =101,
-                    FirstName ="Rohit",
-                    LastName ="Yadav",
-                    ParentName ="Random Father",
-                    Phone ="+91-9825545563",
-                    EMail ="mukesh.6182@gmail.com",
-                    Address ="A-47, Amar Colony, Nangloi, Delhi-110041",
-                    Grade ="D"
                 }
             };
 
